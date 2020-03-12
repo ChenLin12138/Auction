@@ -30,12 +30,13 @@ import { RouterModule } from '@angular/router';
   //path:''配置基础url将会导航到HomeComponent
   //products/:prodTitle用于渲染ProductDetailComponent
   //选择HashLocationStrategy作为策略，并通过依赖注入到provider中
+  //path熟悉拥有一个额外的url片段:prodTitle
   imports: [
     BrowserModule,
     // AppRoutingModule
     RouterModule.forRoot([
       {path:'',component:HomeComponent},
-      {path:'products/:prodTitle',component : ProductDetailComponent}
+      {path:'products/:productId',component : ProductDetailComponent}
     ])
   ],
   providers: [ProductService, {provide: LocationStrategy, useClass : HashLocationStrategy}],

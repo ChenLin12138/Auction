@@ -39,7 +39,7 @@ import { RouterModule } from '@angular/router';
       {path:'products/:productId',component : ProductDetailComponent}
     ])
   ],
-  providers: [ProductService, {provide: LocationStrategy, useClass : HashLocationStrategy}],
+  providers: [{provide: LocationStrategy, useClass : HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

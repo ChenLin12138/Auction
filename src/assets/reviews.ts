@@ -9,7 +9,7 @@ export const reviews = [
     },
     {
       "id" : 1,
-      "productId" : 0,
+      "productId" : 1,
       "timestamp" : "2014-05-20T02:17:00+00:00",
       "user": "User 2",
       "rating" : 3,

@@ -27,6 +27,9 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     ProductDetailComponent
   ],
+  //path:''配置基础url将会导航到HomeComponent
+  //products/:prodTitle用于渲染ProductDetailComponent
+  //选择HashLocationStrategy作为策略，并通过依赖注入到provider中
   imports: [
     BrowserModule,
     // AppRoutingModule

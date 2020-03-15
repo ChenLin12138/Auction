@@ -14,6 +14,9 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductService } from './services/product.service';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FilterPipe } from './filters/filter.pipe';
+import { ReactiveFormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { RouterModule } from '@angular/router';
     SearchComponent,
     CarouselComponent,
     HomeComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    FilterPipe
   ],
   //path:''配置基础url将会导航到HomeComponent
   //products/:prodTitle用于渲染ProductDetailComponent
@@ -34,6 +38,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     // AppRoutingModule
+    ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot([
       {path:'',component:HomeComponent},
       {path:'products/:productId',component : ProductDetailComponent}

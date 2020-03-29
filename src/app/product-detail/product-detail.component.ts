@@ -19,13 +19,21 @@ export class ProductDetailComponent implements OnInit {
   newComment : string;
   newRating : number;
 
+  productService : ProductService;
+
   isReviewHidden : boolean = true;
 
   constructor(route : ActivatedRoute, productService : ProductService) {
     let prodId : number = parseInt(route.snapshot.params['productId']);
-    this.product = productService.getProductById(prodId);
-    this.reviews = productService.getReviewsForProduct(this.product.id);
+    // this.productService = productService;
+    productService.getProductById(prodId).subscribe(p  => {
+      this.product = p;
+      this.reviews = productService.getReviewsForProduct(this.product.id);
+    });
+    // this.product = productService.getProductById(prodId);
+    // this.reviews = productService.getReviewsForProduct(this.product.id);
    }
+
 
   addReview() {
     let review = new Review(0,this.product.id, new Date(), 'Anonymous', this.newRating, this.newComment);

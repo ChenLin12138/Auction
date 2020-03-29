@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
 import { FilterPipe } from './filters/filter.pipe';
 import { ReactiveFormsModule} from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { FormsModule } from '@angular/forms';
     // AppRoutingModule
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path:'',component:HomeComponent},
       {path:'products/:productId',component : ProductDetailComponent}

@@ -30,8 +30,6 @@ export class ProductDetailComponent implements OnInit {
       this.product = p;
       this.reviews = productService.getReviewsForProduct(this.product.id);
     });
-    // this.product = productService.getProductById(prodId);
-    // this.reviews = productService.getReviewsForProduct(this.product.id);
    }
 
 

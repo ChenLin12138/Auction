@@ -23,6 +23,11 @@ export class HomeComponent implements OnInit {
       value => this.filterCriteria = value,
       error => console.error(error)
       );
+
+    this.productService.searchEvent.subscribe(params => this.productService.search(params), 
+      err => console.log("Can't get products. Error code: %s, URL: %s"),
+      () => console.log('DONE')
+    );
   }
 
   ngOnInit(): void {

@@ -25,9 +25,9 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(route : ActivatedRoute, productService : ProductService) {
     let prodId : number = parseInt(route.snapshot.params['productId']);
-    // this.productService = productService;
     productService.getProductById(prodId).subscribe(p  => {
       this.product = p;
+      //获取评论信息
       this.reviews = productService.getReviewsForProduct(this.product.id);
     });
    }
